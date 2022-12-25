@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static %}
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>大数据分析大作业</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      <link rel="icon" href="/static/images/fevicon.png" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+      <!-- site css -->
+      <link rel="stylesheet" href="/static/style.css" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="/static/css/responsive.css" />
+      <!-- color css -->
+      <link rel="stylesheet" href="/static/css/colors.css" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="/static/css/bootstrap-select.css" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="/static/css/perfect-scrollbar.css" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="/static/css/custom.css" />
+      <!--[if lt IE 9]>
+      <script src="/static/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="/static/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="/static/https://assets.pyecharts.org/assets/echarts.min.js"></script>
+      <![endif]-->
+   </head>
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section">
+                        <a href="/analysis/mainpage/"><img class="logo_icon img-responsive" src="/static/images/logo/logo_icon.png" alt="#" /></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                    <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-bar-chart-o green_color"></i> <span>第一问</span></a>
+                        <ul class="collapse list-unstyled" id="dashboard">
+                           <li>
+                              <a href="/analysis/t1/age_vs_edu/">> <span>年龄段学历阶级关系图</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t1/ageEdu/">> <span>年龄vs学历统计图</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t1/kidsNo_age_edu/">> <span>不同年龄段学历家庭中有孩子的数量</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t1/familymemNo_age_edu/">> <span>不同年龄段学历家庭成员数</span></a>
+                           </li>
+                           <li>
+                              <a href="/analysis/t1/edu_vs_interest/">> <span>学历与兴趣的关系</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t1/class_clustering/">> <span>阶级聚类展示</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t1/wealth_vs_joviality/">> <span>财富与幸福度关系图</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t1/class_attribute/">> <span>阶级属性雷达图</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t1/sleeping_status/">> <span>睡眠状态展示</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t1/work_time/">> <span>上下班时间学历分布图</span></a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="active">
+                        <a href="#dashboard2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-bar-chart-o green_color"></i> <span>第二问</span></a>
+                        <ul class="collapse list-unstyled" id="dashboard2">
+                           <li>
+                              <a href="/analysis/t2/social_network/">> <span>社交网络</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t2/lidao/">> <span>人物关系图</span></a>
+                           </li>
+                           <li>
+                              <a href="/analysis/t2/entertainment/">> <span>娱乐场所</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t2/relationship/">> <span>参与者之间的关系</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t2/pub/">> <span>不同社交模式的人去酒吧的次数</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t2/financial_indices_2002/">> <span>典型人物示意图</span></a>
+                           </li>
+                        </ul>
+                     </li>
+                      <li class="active">
+                        <a href="#dashboard3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-bar-chart-o green_color"></i> <span>第三问</span></a>
+                        <ul class="collapse list-unstyled" id="dashboard3">
+                           <li>
+                              <a href="/analysis/t3/seasonal_income/">> <span>餐厅季度利润</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t3/clubs/">> <span>酒吧季度利润</span></a>
+                           </li>
+                           <li>
+                              <a href="/analysis/t3/rental_cost/">> <span>租金分布图</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t3/restaurant/">> <span>饭店分布图</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t3/building_type/">> <span>建筑物类型图</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t3/company_size/">> <span>员工数量图</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t3/building_types/">> <span>建筑物类型图2</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t3/bar/">> <span>酒吧位置</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t3/GDP/">> <span>营业额</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t3/rent/">> <span>租金</span></a>
+                           </li>
+                            <li>
+                              <a href="/analysis/t3/salary/">> <span>工资</span></a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section">
+                           <a href="/analysis/mainpage/"><img class="img-responsive" src="/static/images/logo/logo.png" alt="#" /></a>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <!-- end topbar -->
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>年龄段学历阶级关系图</h2>
+                           </div>
+                        </div>
+                     </div>
+                      <iframe src="/static/t1/age_vs_edu.html" height="530px" width="1200px"></iframe>
+                  </div>
+                  <!-- footer -->
+{#                  <div class="container-fluid">#}
+{#                     <div class="footer">#}
+{#                        <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>#}
+{#                     </div>#}
+{#                  </div>#}
+               </div>
+               <!-- end dashboard inner -->
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/popper.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <!-- wow animation -->
+      <script src="/static/js/animate.js"></script>
+      <!-- select country -->
+      <script src="/static/js/bootstrap-select.js"></script>
+      <!-- owl carousel -->
+      <script src="/static/js/owl.carousel.js"></script>
+      <!-- chart js -->
+      <script src="/static/js/Chart.min.js"></script>
+      <script src="/static/js/Chart.bundle.min.js"></script>
+      <script src="/static/js/utils.js"></script>
+      <script src="/static/js/analyser.js"></script>
+      <!-- nice scrollbar -->
+      <script src="/static/js/perfect-scrollbar.min.js"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="/static/js/custom.js"></script>
+      <script src="/static/js/chart_custom_style1.js"></script>
+   </body>
+</html>

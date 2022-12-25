@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="height: 490px;width: 1180px"></div>
+<script>
+    var mycharts=echarts.init(document.getElementById("main"))
+    option = {
+  series: {
+    type: 'sankey',
+    layout: 'none',
+    emphasis: {
+      focus: 'adjacency'
+    },
+
+     levels: [
+            {
+              depth: 0,
+              itemStyle: {
+                color: '#fbb4ae'
+              },
+              lineStyle: {
+                color: 'source',
+                opacity: 0.6
+              }
+            },
+            {
+              depth: 1,
+              itemStyle: {
+                color: '#b3cde3'
+              },
+              lineStyle: {
+                color: 'source',
+                opacity: 0.6
+              }
+            },
+            {
+              depth: 2,
+              itemStyle: {
+                color: '#ccebc5'
+              },
+              lineStyle: {
+                color: 'source',
+                opacity: 0.6
+              }
+            },
+            {
+              depth: 3,
+              itemStyle: {
+                color: '#decbe4'
+              },
+              lineStyle: {
+                color: 'source',
+                opacity: 0.6
+              }
+            }
+          ],
+    data: [
+      {
+        name: 'participant'
+      },
+      {
+        name: 'HighSchoolOrCollege'
+      },
+      {
+        name: 'Bachelors'
+      },
+      {
+        name: 'Graduate'
+      },
+      {
+        name: 'Low'
+      },
+      {
+        name: '青年'
+      },
+      {
+        name: '而立'
+      },
+      {
+        name: '不惑'
+      },
+      {
+        name: '知天命'
+      },
+        {
+         name:'高收入人群'
+        },
+        {
+            name:"中下收入"
+        },
+        {
+            name:"低收入人群"
+        },{
+        name:"中上收入"
+        }
+
+    ],
+    links: [
+      {
+        source: 'participant',
+        target: '青年',
+        value: 302
+      },
+      {
+        source: 'participant',
+        target: '不惑',
+        value: 245
+      },
+      {
+        source: 'participant',
+        target: '而立',
+        value: 232
+      },
+      {
+        source: 'participant',
+        target: '知天命',
+        value: 232
+      },
+        {
+        source: '青年',
+        target: 'HighSchoolOrCollege',
+        value: 101
+      },
+        {
+        source: '青年',
+        target: 'Bachelors',
+        value: 79
+      },
+        {
+        source: '青年',
+        target: 'Graduate',
+        value: 49
+      },
+        {
+        source: '青年',
+        target: 'Low',
+        value: 23
+      },
+        {
+        source: '而立',
+        target: 'HighSchoolOrCollege',
+        value: 120
+      },
+        {
+        source: '而立',
+        target: 'Bachelors',
+        value: 46
+      },
+        {
+        source: '而立',
+        target: 'Graduate',
+        value: 45
+      },
+        {
+        source: '而立',
+        target: 'Low',
+        value: 21
+      },
+         {
+        source: '不惑',
+        target: 'HighSchoolOrCollege',
+        value: 126
+      },
+        {
+        source: '不惑',
+        target: 'Bachelors',
+        value: 56
+      },
+        {
+        source: '不惑',
+        target: 'Graduate',
+        value: 42
+      },
+        {
+        source: '不惑',
+        target: 'Low',
+        value: 21
+      },
+        {
+        source: '知天命',
+        target: 'HighSchoolOrCollege',
+        value: 128
+      },
+        {
+        source: '知天命',
+        target: 'Bachelors',
+        value: 51
+      },
+        {
+        source: '知天命',
+        target: 'Graduate',
+        value: 36
+      },
+        {
+        source: '知天命',
+        target: 'Low',
+        value: 17
+      },
+        {
+            source: "HighSchoolOrCollege",
+            target: "高收入人群",
+            value:3
+        },
+        {
+            source: "HighSchoolOrCollege",
+            target: "中上收入",
+            value:223
+        },
+        {
+          source: "HighSchoolOrCollege",
+            target: "中下收入",
+            value:103
+        },
+        {
+          source: "HighSchoolOrCollege",
+            target: "低收入人群",
+            value:196
+        },
+        {
+            source:"Graduate",
+            target:"中上收入",
+            value:60
+        },
+        {
+            source:"Graduate",
+            target:"中下收入",
+            value:46
+        },
+        {
+            source:"Graduate",
+            target:"高收入人群",
+            value:64
+        },
+        {
+            source: "Low",
+            target:"中下收入",
+            value: 26
+        },
+        {
+            source: "Low",
+            target:"低收入人群",
+            value: 28
+        },
+        {
+            source: "Low",
+            target:"中上收入",
+            value: 30
+        },
+        {
+            source: "Bachelors",
+            target:"高收入人群",
+            value:45
+        },
+        {
+            source: "Bachelors",
+            target:"中上收入",
+            value:98
+        },
+        {
+            source: "Bachelors",
+            target:"中下收入",
+            value:89
+        }
+    ]
+  }
+};
+    mycharts.setOption(option)
+</script>
+</body>
+</html>

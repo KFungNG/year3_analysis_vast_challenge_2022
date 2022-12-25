@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="height: 490px;width: 1180px"></div>
+<script>
+    var myecharts=echarts.init(document.getElementById("main"))
+    var data = [
+        {
+            name:"青年",
+            value:92,
+            itemStyle:{
+                color:"rgba(148,239,88,0.94)"
+            },
+            children:[
+                {
+                    name:"Bachelors",
+                    value:17,
+                },
+                {
+                    name:"Graduate",
+                    value:13,
+                },
+                {
+                    name:"HighSchoolOrCollege",
+                    value:50,
+                },
+                {
+                    name:"Low",
+                    value:12,
+                }
+            ]
+        },
+        {
+            name:"而立",
+            value:75,
+            itemStyle:{
+                        color:"rgb(153,232,211)"
+                    },
+            children:[
+                {
+                    name:"Bachelors",
+                    value:12,
+                },
+                {
+                    name:"Graduate",
+                    value:13,
+                },
+                {
+                    name:"HighSchoolOrCollege",
+                    value:41,
+                },
+                {
+                    name:"Low",
+                    value:9,
+                }
+            ]
+        },
+        {
+            name:"不惑",
+            value:70,
+            itemStyle:{
+                        color:"rgba(225,216,47,0.85)"
+                    },
+            children:[
+                {
+                    name:"Bachelors",
+                    value:12,
+                },
+                {
+                    name:"Graduate",
+                    value:8,
+                },
+                {
+                    name:"HighSchoolOrCollege",
+                    value:45,
+                },
+                {
+                    name:"Low",
+                    value:5,
+                }
+            ]
+        },
+        {
+            name:"知天命",
+            value:64,
+            itemStyle: {
+              color: "rgba(40,124,143,0.85)"
+            },
+            children:[
+                {
+                    name:"Bachelors",
+                    value:14,
+                },
+                {
+                    name:"Graduate",
+                    value:8,
+                },
+                {
+                    name:"HighSchoolOrCollege",
+                    value:34,
+                },
+                {
+                    name:"Low",
+                    value:8,
+                }
+            ]
+        }
+];
+option = {
+  visualMap: {
+    type: 'continuous',
+    min: 0,
+    max: 50,
+    inRange: {
+      color: ['#2F93C8', '#AEC48F', '#FFDB5C', '#F98862']
+    }
+  },
+  series: {
+    type: 'sunburst',
+    data: data,
+    radius: [0, '90%'],
+    label: {
+        rotate: 'radial',
+        textStyle: {
+          fontSize:15,
+        }
+      }
+  }
+};
+myecharts.setOption(option)
+</script>
+</body>
+</html>

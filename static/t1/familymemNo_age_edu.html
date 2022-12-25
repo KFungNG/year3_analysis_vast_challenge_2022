@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ECharts</title>
+  <!-- 引入 echarts.js -->
+  <script src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="height: 490px;width: 1180px"></div>
+<script type="text/javascript">
+  // 基于准备好的dom，初始化echarts实例
+  var myChart = echarts.init(document.getElementById('main'));
+  setTimeout(function () {
+    option = {
+      color:["rgba(213,213,65,0.85)","rgba(98,194,50,0.85)","rgba(231,170,91,0.94)","rgba(231,145,132,0.85)"],
+      legend: {},
+      tooltip: {
+        trigger: 'axis',
+        showContent: false
+      },
+      dataset: {
+        source: [
+          ['product', '青年', '而立', '不惑', '知天命'],
+          ["Graduate",1.9148936170212767, 2.0596026490066226, 1.7721518987341771, 2.16],
+          ["HighSchoolOrCollege",2.022222222222222, 2.075, 1.9782608695652173, 2.0476190476190474],
+          ["Bachelors",1.6904761904761905,
+            2.0555555555555554,
+            1.7678571428571428,
+            1.7142857142857142],
+          ["Low",1.8888888888888888, 1.90625, 1.9803921568627452, 2.2941176470588234]
+        ]
+      },
+      xAxis: { type: 'category' },
+      yAxis: { gridIndex: 0 ,min:1.5},
+      grid: { top: '55%' },
+      series: [
+        {
+          type: 'line',
+          smooth: true,
+          seriesLayoutBy: 'row',
+          emphasis: { focus: 'series' }
+        },
+        {
+          type: 'line',
+          smooth: true,
+          seriesLayoutBy: 'row',
+          emphasis: { focus: 'series' }
+        },
+        {
+          type: 'line',
+          smooth: true,
+          seriesLayoutBy: 'row',
+          emphasis: { focus: 'series' }
+        },
+        {
+          type: 'line',
+          smooth: true,
+          seriesLayoutBy: 'row',
+          emphasis: { focus: 'series' }
+        },
+        {
+          type: 'pie',
+          id: 'pie',
+          radius: '30%',
+          center: ['50%', '25%'],
+          emphasis: {
+            focus: 'self'
+          },
+          label: {
+            formatter: '{b}: {@青年} ({d}%)'
+          },
+          encode: {
+            itemName: 'product',
+            value: '青年',
+            tooltip: '青年'
+          }
+        }
+      ]
+    };
+    myChart.on('updateAxisPointer', function (event) {
+      const xAxisInfo = event.axesInfo[0];
+      if (xAxisInfo) {
+        const dimension = xAxisInfo.value + 1;
+        console.log(dimension)
+        myChart.setOption({
+          series: {
+            id: 'pie',
+            label: {
+              formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+            },
+            encode: {
+              value: dimension,
+              tooltip: dimension
+            }
+          }
+        });
+      }
+    });
+    myChart.setOption(option);
+  });
+</script>
+</body>
+</html>

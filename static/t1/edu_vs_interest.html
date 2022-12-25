@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+</head>
+<body>
+<div id="main1" style="height: 500px;float: top"></div>
+<div id="main2" style="height: 400px;float: top"></div>
+<script>
+    var mychart=echarts.init(document.getElementById("main1"));
+    var option = {
+        color:["#c4cc38","#71ae46","#96b744","#c4cc38" , "#ebe12a"
+        ,"#eab026","#e3852b","#d85d2a", "#ce2626",
+            "#ac2026","#71ae46","#96b744" ],
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      // Use axis to trigger tooltip
+      type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'value'
+  },
+  yAxis: {
+    type: 'category',
+    data: ["Graduate","HighSchoolOrCollege","Bachelors","Low"]
+  },
+  series: [
+    {
+      name: 'A',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [12,59,24,7]
+    },
+    {
+      name: 'B',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [17,45,17,10]
+    },
+    {
+      name: 'C',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [15,54,21,12]
+    },
+    {
+      name: 'D',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [17,49,27,3]
+    },
+    {
+      name: 'E',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [18,27,12,6]
+    },
+    {
+      name: 'F',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [17,63,20,6]
+    },
+    {
+      name: 'G',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [26,47,24,11]
+    },
+    {
+      name: 'H',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [16,51,34,10]
+    },
+    {
+      name: 'I',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [17,52,17,10]
+    },
+    {
+      name: 'J',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [15,58,34,9]
+    }
+  ]
+};
+      mychart.setOption(option);
+</script>
+<script>
+    var mychart=echarts.init(document.getElementById("main2"));
+    option = {
+        color: ["#63b2ee" , "#76da91" , "#f8cb7f","#f89588",
+            "#7cd6cf" ,"#9192ab","#7898e1","#efa666",
+            "#eddd86","#9987ce"],
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b} : {c} ({d}%)'
+  },
+  legend: {
+    left: 'center',
+    top: 'bottom',
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      mark: { show: true },
+      dataView: { show: true, readOnly: true },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+        title: [
+    {
+      text: 'Graduate',
+      subtext: '总计 ' + 170,
+      left: '15%',
+      textAlign: 'center'
+    },
+            {
+      text: 'HighSchoolOrCollege',
+      subtext: '总计 ' + 525,
+      left: '35%',
+      textAlign: 'center'
+    },
+            {
+      text: 'Bachelors',
+      subtext: '总计 ' + 232,
+      left: '60%',
+      textAlign: 'center'
+    },
+            {
+      text: 'Low',
+      subtext: '总计 ' + 84,
+      left: '80%',
+      textAlign: 'center'
+    },
+  ],
+  series: [
+    {
+      name: 'Area Mode',
+      type: 'pie',
+      radius: [20, 140],
+      center: ['15%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 5
+      },
+      data: [
+        { value: 12, name: 'A' },
+        { value: 17, name: 'B' },
+        { value: 15, name: 'C' },
+        { value: 17, name: 'D' },
+        { value: 28, name: 'E' },
+        { value: 17, name: 'F' },
+        { value: 26, name: 'G' },
+        { value: 16, name: 'H' },
+          { value: 17, name: 'I' },
+          { value: 15, name: 'J' },
+      ]
+    },
+      {
+      name: 'Area Mode',
+      type: 'pie',
+      radius: [20, 140],
+      center: ['35%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 5
+      },
+      data: [
+        { value: 59, name: 'A' },
+        { value: 45, name: 'B' },
+        { value: 54, name: 'C' },
+        { value: 49, name: 'D' },
+        { value: 47, name: 'E' },
+        { value: 63, name: 'F' },
+        { value: 47, name: 'G' },
+        { value: 51, name: 'H' },
+          { value: 52, name: 'I' },
+          { value: 58, name: 'J' },
+      ]
+    },
+      {
+      name: 'Area Mode',
+      type: 'pie',
+      radius: [20, 140],
+      center: ['60%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 5
+      },
+      data: [
+        { value: 54, name: 'A' },
+        { value: 19, name: 'B' },
+        { value: 21, name: 'C' },
+        { value: 27, name: 'D' },
+        { value: 12, name: 'E' },
+        { value: 20, name: 'F' },
+        { value: 24, name: 'G' },
+        { value: 34, name: 'H' },
+          { value: 17, name: 'I' },
+          { value: 34, name: 'J' },
+      ]
+    },
+      {
+      name: 'Area Mode',
+      type: 'pie',
+      radius: [20, 140],
+      center: ['80%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 5
+      },
+      data: [
+        { value: 7, name: 'A' },
+        { value: 10, name: 'B' },
+        { value: 12, name: 'C' },
+        { value: 3, name: 'D' },
+        { value: 6, name: 'E' },
+        { value: 6, name: 'F' },
+        { value: 11, name: 'G' },
+        { value: 10, name: 'H' },
+          { value: 10, name: 'I' },
+          { value: 9, name: 'J' },
+      ]
+    }
+  ]
+};
+    mychart.setOption(option);
+</script>
+</body>
+</html>

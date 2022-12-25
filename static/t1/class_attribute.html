@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="height: 490px;width: 1180px"></div>
+<script>
+    var mycharts=echarts.init(document.getElementById("main"))
+    option = {
+  title: {
+    text: '人群阶级雷达图',
+    top: 10,
+    left: 10,
+      textStyle:{
+        fontSize:20
+      }
+  },
+		tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    type: 'scroll',
+    bottom: 10,
+    data: ["高收入人群","中上收入","中下收入","低收入人群"]
+  },
+  radar: {
+    indicator: [
+      { text: 'WeeklyExtraBudget', max: 4200 },
+      { text: 'Food', max: 20 },
+      { text: 'Balance', max: 12000 },
+      { text: 'hourlyRate', max: 50 },
+      { text: 'financialStatus', max: 1 }
+    ]
+  },
+        series: [
+            {
+                color:["rgba(47,136,225,0.85)","rgb(217,128,186)"
+                ,"rgb(61,201,47)","rgba(34,232,173,0.85)"],
+                name:"人群阶级",
+                type:"radar",
+                emphasis: {
+          areaStyle: {
+            color: 'rgba(0,250,0,0.3)'
+          }
+        },
+                data: [
+          {
+            value: [
+              3706.6926058681565,
+14.392857142857142,
+9742.574017799856,
+49.4883635471396,
+0.9997120783146984,
+            ],
+            name: "高收入人群"
+          },
+            {
+            value: [
+              1165.300905454212,
+18.37499766743175,
+2318.062255589116,
+15.737749893991037,
+0.9987401850862367
+            ],
+            name: "中下收入"
+          },
+            {
+            value: [
+              0.0,
+18.259541984732824,
+2306.052152430202,
+11.265573746947508,
+0.0
+            ],
+            name: "低收入人群"
+          },
+            {
+            value: [
+              1344.6284615765132,
+13.15625,
+4360.460320040582,
+23.25254453262926,
+0.9999160181400817
+            ],
+            name: "中上收入"
+          },
+        ]
+            }
+        ]
+};
+    mycharts.setOption(option)
+</script>
+</body>
+</html>
